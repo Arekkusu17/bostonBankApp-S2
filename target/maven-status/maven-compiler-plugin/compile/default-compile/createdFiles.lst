@@ -1,0 +1,5 @@
+com\mycompany\bostonbankapp\BankPackage\BankAccount.class
+com\mycompany\bostonbankapp\Helpers\InputHelper.class
+com\mycompany\bostonbankapp\BankPackage\BankServices.class
+com\mycompany\bostonbankapp\BankPackage\Client.class
+com\mycompany\bostonbankapp\BostonBankApp.class

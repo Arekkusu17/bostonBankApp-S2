@@ -1,27 +1,35 @@
 package com.mycompany.bostonbankapp.AccountTypes;
 import com.mycompany.bostonbankapp.BankPackage.BankAccount;
 
+/**
+ *
+ * @author Alex Fernández
+ */
+
 public class CreditAccount extends BankAccount {
-    private double creditLimit;
+    private int creditLimit;
 
-    public CreditAccount(int accountNumber, int balance, int creditLimit) {
-        super(accountNumber, balance);
+    public CreditAccount(int accountNumber, int creditLimit) {
+        super(accountNumber);  // Usa la sobrecarga (balance = 0)
         this.creditLimit = creditLimit;
     }
 
-    public CreditAccount(int accountNumber) {
-        super(accountNumber);  // Usa la sobrecarga (saldo = 0.0)
-        this.creditLimit = creditLimit;
-    }
-
-    public double getCreditLimit() {
+    public int getCreditLimit() {
         return creditLimit;
     }
 
     @Override
     public void withdraw(int amount) {
-        if (amount > 0 && balance + creditLimit >= amount) {
+        if (amount <= 0) {
+            System.out.println("El  monto debe ser positivo.");
+            return;
+        }
+        int availableBalance = balance + creditLimit;
+        if (amount <= availableBalance) {
             balance -= amount;
+            System.out.println("Retiro exitoso. Nuevo saldo: " + balance);
+        } else {
+            System.out.println("Fondos insuficientes. Incluyendo el crédito disponible.");
         }
     }
 
