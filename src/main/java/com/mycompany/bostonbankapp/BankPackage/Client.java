@@ -57,7 +57,7 @@ public class Client implements Showable {
 
         if (bankAccount instanceof CreditAccount) {
             CreditAccount creditAccount = (CreditAccount) bankAccount;
-            double available = creditAccount.getCreditLimit() + creditAccount.getBalance();
+            int available = creditAccount.getCreditLimit() + creditAccount.getBalance();
             info += "\nLínea de crédito: $" + creditAccount.getCreditLimit();
             info += "\nCrédito disponible: $" + available;
         }
