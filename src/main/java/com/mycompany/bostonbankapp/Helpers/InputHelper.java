@@ -9,7 +9,6 @@ import java.util.Scanner;
  *
  * @author arekk
  */
-import java.util.Scanner;
 
 /**
  *
